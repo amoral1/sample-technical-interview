@@ -25,8 +25,8 @@ class BirthdayCake
   attr_accessor :age, :lit
 
   def initialize(age)
-    self.age = age
-    self.lit = false
+   @age = age
+   @lit = false
   end
 
   def candles_status
@@ -45,25 +45,34 @@ class BirthdayCake
     "🎶Happy birthday to you, happy birthday to you🎶"
   end
 
+  def light_candles
+    "Lighting candles..."
+  end 
+
   def to_s
     "Birthday cake with #{self.age} #{candles_status} candles"
   end
 
-  def BirthdayCake.celebrate(age)
-    birthday_cake = Birthdaycake.new(age)
+  def blow_out_candles
+    "Blowing out candles..."
+  end
+
+  def celebrate
+    birthday_cake = BirthdayCake.new(age)
     puts birthday_cake.greet
     puts birthday_cake.to_s
     puts "Lighting candles..."
     birthday_cake.light_candles
     puts birthday_cake.to_s
     puts "Singing happy birthday..."
-    puts birthday_cake.sign
+    puts birthday_cake.sing
     puts "Blowing out candles..."
-    birth_cake.blow_out_candles
+    birthday_cake.blow_out_candles
     puts birthday_cake.to_s
 
     birthday_cake
   end
 end
 
-BirthdayCake.celebrate(10)
+age = 10
+puts BirthdayCake.new(age).celebrate
